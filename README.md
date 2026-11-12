@@ -187,6 +187,19 @@ The firmware is downloaded to the RA6E2 and debugged through e² studio's Renesa
 
 <img src="docs/images/e2studio-debug.png" width="800" alt="e² studio debug session on the RA6E2: Debug view, startup code, the sensor variables in the Expressions view and the GDB server console">
 
+## Project status
+
+What the firmware in this repo does today:
+
+| Part | Status |
+|---|---|
+| FSR1 and FSR2 (ADC) | Working: sampled once per second on ADC channels 0 and 1 |
+| MPU6050, MAX30102, HS4001 (I²C) | Drivers written. Opening the I²C bus, the sensor set-up and the read calls are commented out for now |
+| Heart rate and SpO₂ | Not yet: the MAX30102 code stores raw red and IR PPG samples (in `g_heart_rate` and `g_spo2_ir`), with no heart-rate or SpO₂ calculation |
+| BLE | Service and notification code written. `hal_entry()` runs the sensor loop directly and does not call `app_main()`, where BLE start-up is also switched off, and `ble_send_sensors()` is not called yet |
+
+Each SoleGuard characteristic holds 20 bytes, so the one-line sensor message is cut off after 19 characters. It needs to be split across the five characteristics.
+
 ## Roadmap
 
 - Move the risk assessment onto the device with a **TinyML** model running on the RA6E2.
