@@ -152,6 +152,16 @@ Paths are relative to `firmware/`.
 
 <img src="docs/images/fsp-stacks.png" width="800" alt="e² studio FSP Stacks Configuration: the GTL BLE Abstraction stack with TinyCrypt, Virtual EEPROM on flash, the DA14531 GTL driver layer and the BLE GTL transport on UART, next to the g_i2c0 SCI I2C master">
 
+### Build and flash
+
+1. Install Renesas **e² studio** with **FSP 6.6.0** and the **LLVM for Arm** toolchain.
+2. Choose **File → Import → General → Existing Projects into Workspace** and select the `firmware` folder.
+3. Open `configuration.xml` and click **Generate Project Content**. This recreates `ra/`, `ra_gen/` and `ra_cfg/`, which are generated and not stored in the repo.
+4. Build with **Project → Build Project**.
+5. Connect the board to the PC through its J-Link debugger, right-click the project, choose **Debug As → Renesas GDB Hardware Debugging**, then press **Resume (F8)**.
+
+Debug messages are printed over SEGGER RTT when SEGGER's RTT source is added as `src/RTT/`. Without it, the build shows a warning and the messages are switched off.
+
 ### Debugging on the board
 
 The firmware is downloaded to the RA6E2 and debugged through e² studio's Renesas GDB hardware debugger. The sensor variables (`g_fsr1`, `g_fsr2`, `g_accel_x`, `g_accel_y`, `g_accel_z`, `g_heart_rate`, `g_spo2_ir`, `g_temperature`, `g_humidity`) are added to the **Expressions** view to inspect their values on the hardware.
