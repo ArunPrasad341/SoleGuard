@@ -65,3 +65,32 @@ How it works, end to end:
 1. The **RA6E2** samples every sensor in bare-metal C firmware (no RTOS), built with Renesas e² studio and the Flexible Software Package (FSP).
 2. The readings are sent over **BLE** through a Renesas **DA14531** module.
 3. The **SoleGuard app** draws the plantar heat map, computes the ulcer-risk score, explains what is driving it and recommends what to do.
+
+## System architecture
+
+```mermaid
+flowchart LR
+    subgraph S[Sensors]
+        FSR["FSR1 / FSR2<br/>plantar pressure"]
+        MPU["MPU6050<br/>acceleration + rotation"]
+        MAX["MAX30102<br/>SpO₂ + heart rate"]
+        HS["HS4001<br/>temperature + humidity"]
+    end
+    subgraph M["Renesas RA6E2 (bare-metal firmware)"]
+        ADC[ADC]
+        I2C["I²C"]
+        FW["Sensor sampling"]
+        UART[UART]
+    end
+    FSR -- analog --> ADC
+    MPU -- I²C --> I2C
+    MAX -- I²C --> I2C
+    HS -- I²C --> I2C
+    ADC --> FW
+    I2C --> FW
+    FW --> UART
+    UART --> BLE["DA14531<br/>BLE PMOD"]
+    BLE -. Bluetooth LE .-> APP["SoleGuard app<br/>heat map + risk score"]
+```
+
+The firmware reads the two FSRs through the ADC and the three digital sensors over I²C, then hands the data to the DA14531 module, which carries it to the phone over Bluetooth Low Energy.
