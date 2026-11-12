@@ -48,3 +48,20 @@ By the time an ulcer is visible, the damage has already been done ([Armstrong et
 > People with diabetes cannot feel the plantar pressure peaks, unhealthy in-shoe conditions and poor perfusion that lead to foot ulcers, and today these risk factors are checked only during infrequent clinic visits.
 >
 > **SoleGuard's goal is a low-cost, wearable system that measures these risk factors continuously during daily life and turns them into an early, easy-to-understand warning, so the patient can offload the foot before an ulcer forms.**
+
+## Our solution
+
+SoleGuard puts the missing alarm back. The sensors map onto the risk factors above:
+
+| Risk factor | What SoleGuard measures | Sensor |
+|---|---|---|
+| High plantar pressure | Pressure under the foot (kPa), the most loaded zone, left/right asymmetry | 2 × FSR (force-sensitive resistor) |
+| Warm, damp in-shoe microclimate | Temperature and relative humidity inside the shoe | Renesas HS4001 |
+| Poor perfusion | Blood-oxygen saturation (SpO₂) and heart rate | MAX30102 |
+| Activity context | Foot motion (3-axis acceleration and rotation) | MPU6050 |
+
+How it works, end to end:
+
+1. The **RA6E2** samples every sensor in bare-metal C firmware (no RTOS), built with Renesas e² studio and the Flexible Software Package (FSP).
+2. The readings are sent over **BLE** through a Renesas **DA14531** module.
+3. The **SoleGuard app** draws the plantar heat map, computes the ulcer-risk score, explains what is driving it and recommends what to do.
