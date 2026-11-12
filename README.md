@@ -108,6 +108,19 @@ The firmware reads the two FSRs through the ADC and the three digital sensors ov
 
 The MAX30102 and HS4001 connect to the I²C bus on the board's Arduino-header pins D14/D15.
 
+## Repository structure
+
+```
+SoleGuard/
+├── README.md
+├── docs/images/            App and e² studio screenshots
+└── firmware/               e² studio project (SolGaurd_flat)
+    ├── src/                Application code: sensors and main loop
+    ├── qe_gen/ble/         BLE service and application (QE for BLE)
+    ├── script/             Linker script
+    └── configuration.xml   FSP configuration
+```
+
 ## Firmware
 
 The firmware is bare-metal C for the RA6E2, built in Renesas **e² studio** with the **Flexible Software Package (FSP)**. The main FSP modules in the project's stack configuration:
