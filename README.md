@@ -94,3 +94,16 @@ flowchart LR
 ```
 
 The firmware reads the two FSRs through the ADC and the three digital sensors over I²C, then hands the data to the DA14531 module, which carries it to the phone over Bluetooth Low Energy.
+
+## Hardware
+
+| Part | Role | Interface |
+|---|---|---|
+| Renesas RA6E2 MCU board | Main controller running the bare-metal firmware | — |
+| 2 × FSR (FSR1, FSR2) | Plantar pressure | ADC |
+| MPU6050 | 3-axis accelerometer + 3-axis gyroscope | I²C |
+| MAX30102 | Pulse oximeter and heart-rate sensor | I²C |
+| Renesas HS4001 | Relative humidity and temperature | I²C |
+| Renesas DA14531 PMOD | Bluetooth Low Energy link to the app | UART |
+
+The MAX30102 and HS4001 connect to the I²C bus on the board's Arduino-header pins D14/D15.
