@@ -99,7 +99,7 @@ The firmware reads the two FSRs through the ADC and the three digital sensors ov
 
 | Part | Role | Interface |
 |---|---|---|
-| Renesas RA6E2 MCU board | Main controller running the bare-metal firmware | — |
+| Renesas BGK-RA6E2 board (R7FA6E2BB3CFM MCU) | Main controller running the bare-metal firmware | — |
 | 2 × FSR (FSR1, FSR2) | Plantar pressure | ADC |
 | MPU6050 | 3-axis accelerometer + 3-axis gyroscope | I²C |
 | MAX30102 | Pulse oximeter and heart-rate sensor | I²C |
