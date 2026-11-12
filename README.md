@@ -111,3 +111,11 @@ The MAX30102 and HS4001 connect to the I²C bus on the board's Arduino-header pi
 ## Roadmap
 
 - Move the risk assessment onto the device with a **TinyML** model running on the RA6E2.
+
+## References
+
+1. ICMR–INDIAB Collaborative Study Group (Anjana RM et al.). *Metabolic non-communicable disease health report of India: the ICMR-INDIAB national cross-sectional study (ICMR-INDIAB-17).* The Lancet Diabetes & Endocrinology, 2023; 11(7): 474–489. <https://doi.org/10.1016/S2213-8587(23)00119-5>
+2. Voelker R. *What are diabetic foot ulcers?* JAMA, 2023; 330(23): 2314. <https://jamanetwork.com/journals/jama/fullarticle/2812203>
+3. Armstrong DG, Boulton AJM, Bus SA. *Diabetic foot ulcers and their recurrence.* New England Journal of Medicine, 2017; 376(24): 2367–2375. <https://doi.org/10.1056/NEJMra1615439>
+4. Bus SA, Waaijman R, Arts M, et al. *Effect of custom-made footwear on foot ulcer recurrence in diabetes: a multicenter randomized controlled trial.* Diabetes Care, 2013; 36(12): 4109–4116.
+5. Abbott CA, et al. *Innovative intelligent insole system reduces diabetic foot ulcer recurrence at plantar sites: a prospective, randomised, proof-of-concept study.* The Lancet Digital Health, 2019. <https://doi.org/10.1016/S2589-7500(19)30128-1>
