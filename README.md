@@ -143,7 +143,8 @@ Paths are relative to `firmware/`.
 
 | FSP module | Role in SoleGuard |
 |---|---|
-| I²C Master on SCI (`r_sci_i2c`), instance `g_i2c0` | I²C bus for the sensors |
+| ADC (`r_adc`), instance `g_adc0`, 12-bit | Reads FSR1 and FSR2 on channels 0 and 1 |
+| I²C Master on SCI (`r_sci_i2c`), instance `g_i2c0`, SCI channel 9 at 100 kHz | I²C bus for the sensors |
 | GTL BLE Abstraction (`rm_ble_abs_gtl`) | Bluetooth Low Energy through the DA14531 |
 | DA14531 GTL Driver Layer and BLE GTL Transport on UART (`rm_ble_abs_gtl_transport`) | Link between the RA6E2 and the DA14531 module |
 | Virtual EEPROM on Flash (`rm_vee_flash`) with `g_flash0` (`r_flash_hp`) | Non-volatile storage required by the BLE abstraction |
