@@ -120,6 +120,8 @@ The firmware is bare-metal C for the RA6E2, built in Renesas **e² studio** with
 | Virtual EEPROM on Flash (`rm_vee_flash`) with `g_flash0` (`r_flash_hp`) | Non-volatile storage required by the BLE abstraction |
 | TinyCrypt (software only) | Cryptography library required by the BLE abstraction |
 
+<img src="docs/images/fsp-stacks.png" width="800" alt="e² studio FSP Stacks Configuration: the GTL BLE Abstraction stack with TinyCrypt, Virtual EEPROM on flash, the DA14531 GTL driver layer and the BLE GTL transport on UART, next to the g_i2c0 SCI I2C master">
+
 ## Roadmap
 
 - Move the risk assessment onto the device with a **TinyML** model running on the RA6E2.
