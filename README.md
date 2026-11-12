@@ -34,3 +34,17 @@ Diabetes damages the nerves in the feet (**peripheral neuropathy**). The person 
 3. **Blood supply to the foot is poor.** Damaged tissue heals slowly, or not at all.
 
 By the time an ulcer is visible, the damage has already been done ([Armstrong et al., 2017](#references)).
+
+### The gap
+
+- Feet are checked **only at occasional clinic visits**, but the pressure that causes ulcers builds up **during everyday walking and standing, between those visits**.
+- Patients **cannot feel** the warning signs, because neuropathy has switched off their alarm.
+- Acting on pressure works, but only when it happens in daily life:
+  - Pressure-relieving custom footwear helped only the patients who actually wore it. Among those who wore it for at least 80% of their steps, ulcer recurrence fell from 47.8% to 25.7%, a 46% relative reduction ([Bus et al., 2013](#references)).
+  - Patients using a smart insole that alerted them through a smartwatch whenever it detected abnormal pressure had **71% fewer ulcers** than the control group, and 86% fewer among those who wore it at least 4.5 hours a day ([Abbott et al., 2019](#references)).
+
+### Our problem statement
+
+> People with diabetes cannot feel the plantar pressure peaks, unhealthy in-shoe conditions and poor perfusion that lead to foot ulcers, and today these risk factors are checked only during infrequent clinic visits.
+>
+> **SoleGuard's goal is a low-cost, wearable system that measures these risk factors continuously during daily life and turns them into an early, easy-to-understand warning, so the patient can offload the foot before an ulcer forms.**
