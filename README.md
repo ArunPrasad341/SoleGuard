@@ -108,6 +108,18 @@ The firmware reads the two FSRs through the ADC and the three digital sensors ov
 
 The MAX30102 and HS4001 connect to the I²C bus on the board's Arduino-header pins D14/D15.
 
+## Firmware
+
+The firmware is bare-metal C for the RA6E2, built in Renesas **e² studio** with the **Flexible Software Package (FSP)**. The main FSP modules in the project's stack configuration:
+
+| FSP module | Role in SoleGuard |
+|---|---|
+| I²C Master on SCI (`r_sci_i2c`), instance `g_i2c0` | I²C bus for the sensors |
+| GTL BLE Abstraction (`rm_ble_abs_gtl`) | Bluetooth Low Energy through the DA14531 |
+| DA14531 GTL Driver Layer and BLE GTL Transport on UART (`rm_ble_abs_gtl_transport`) | Link between the RA6E2 and the DA14531 module |
+| Virtual EEPROM on Flash (`rm_vee_flash`) with `g_flash0` (`r_flash_hp`) | Non-volatile storage required by the BLE abstraction |
+| TinyCrypt (software only) | Cryptography library required by the BLE abstraction |
+
 ## Roadmap
 
 - Move the risk assessment onto the device with a **TinyML** model running on the RA6E2.
