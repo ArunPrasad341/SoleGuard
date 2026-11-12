@@ -107,3 +107,7 @@ The firmware reads the two FSRs through the ADC and the three digital sensors ov
 | Renesas DA14531 PMOD | Bluetooth Low Energy link to the app | UART |
 
 The MAX30102 and HS4001 connect to the I²C bus on the board's Arduino-header pins D14/D15.
+
+## Roadmap
+
+- Move the risk assessment onto the device with a **TinyML** model running on the RA6E2.
