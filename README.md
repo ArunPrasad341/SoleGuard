@@ -162,6 +162,25 @@ Paths are relative to `firmware/`.
 
 Debug messages are printed over SEGGER RTT when SEGGER's RTT source is added as `src/RTT/`. Without it, the build shows a warning and the messages are switched off.
 
+### BLE interface
+
+The firmware advertises as **SolGuard** and exposes one custom service made with QE for BLE. Every characteristic is a 20-byte text value with **Read** and **Notify**.
+
+| Name | UUID |
+|---|---|
+| SoleGuard service | `9d244392-0540-4eba-9ca4-e6080fec2661` |
+| Press | `c8a9cd4b-4198-4319-a92e-4ecc25ce68ee` |
+| Vital | `9f333c5c-08f4-4f30-86b4-8e63af24243f` |
+| Env | `6a4ee769-a943-4d11-8e10-4960b360f65d` |
+| Motion | `138a090d-da5d-4a47-872a-ffc13051fc9f` |
+| ML | `3e4c8f60-1d1c-45bd-8c4a-1ba049ad8643` |
+
+`ble_send_sensors()` in `hal_entry.c` formats the readings as one text line and sends it as a notification on **Press**:
+
+```
+F1:<fsr1>,F2:<fsr2>,AX:<ax>,AY:<ay>,AZ:<az>,T:<°C>,H:<%RH>,HR:<red>,IR:<ir>
+```
+
 ### Debugging on the board
 
 The firmware is downloaded to the RA6E2 and debugged through e² studio's Renesas GDB hardware debugger. The sensor variables (`g_fsr1`, `g_fsr2`, `g_accel_x`, `g_accel_y`, `g_accel_z`, `g_heart_rate`, `g_spo2_ir`, `g_temperature`, `g_humidity`) are added to the **Expressions** view to inspect their values on the hardware.
