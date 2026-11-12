@@ -122,6 +122,12 @@ The firmware is bare-metal C for the RA6E2, built in Renesas **e² studio** with
 
 <img src="docs/images/fsp-stacks.png" width="800" alt="e² studio FSP Stacks Configuration: the GTL BLE Abstraction stack with TinyCrypt, Virtual EEPROM on flash, the DA14531 GTL driver layer and the BLE GTL transport on UART, next to the g_i2c0 SCI I2C master">
 
+### Debugging on the board
+
+The firmware is downloaded to the RA6E2 and debugged through e² studio's Renesas GDB hardware debugger. The sensor variables (`g_fsr1`, `g_fsr2`, `g_accel_x`, `g_accel_y`, `g_accel_z`, `g_heart_rate`, `g_spo2_ir`, `g_temperature`, `g_humidity`) are added to the **Expressions** view to inspect their values on the hardware.
+
+<img src="docs/images/e2studio-debug.png" width="800" alt="e² studio debug session on the RA6E2: Debug view, startup code, the sensor variables in the Expressions view and the GDB server console">
+
 ## Roadmap
 
 - Move the risk assessment onto the device with a **TinyML** model running on the RA6E2.
