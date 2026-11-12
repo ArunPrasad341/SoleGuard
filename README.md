@@ -16,3 +16,21 @@ SoleGuard measures plantar pressure, in-shoe temperature and humidity, blood-oxy
 **Plantar heat map.** Pressure in four zones per foot, from toes to heel, colour-coded from low to high kPa. The most loaded zone is called out with a recommendation: in this reading the **right metatarsal at 195.5 kPa** is above the app's safe tissue-load threshold, so the app suggests offloading it with a cushioned insole. Below it are the left and right average pressures (106.6 and 122.3 kPa) and the left/right asymmetry (13%).
 
 **Ulcer risk.** A rule-based score from 0 to 100, here **63 (High risk)**, shown with the readings behind it: peak pressure 195.5 kPa, asymmetry 13%, SpO₂ 95.1% and in-shoe humidity 84.7%. Each finding is explained in plain language. In this reading the right-metatarsal pressure peak is the main driver, loading between the two feet is balanced, and SpO₂ sits at the lower edge of normal.
+
+## Problem statement
+
+### Why diabetic foot ulcers matter
+
+- **Scale in India:** diabetes prevalence is 11.4%, about **101 million people**, and another 15.3%, about **136 million people**, have prediabetes ([ICMR-INDIAB, 2023](#references)).
+- **Lifetime risk:** about **one in three people with diabetes develops a foot ulcer**. Roughly half of these ulcers become infected, and about one in five of those infections ends in amputation of part or all of the foot ([JAMA, 2023](#references)).
+- **Recurrence:** healing is not the end. Ulcers come back in about **40% of patients within one year and 65% within five years** ([JAMA, 2023](#references)).
+
+### Why they happen
+
+Diabetes damages the nerves in the feet (**peripheral neuropathy**). The person loses protective sensation, so nothing hurts when:
+
+1. **Pressure stays high under bony areas.** The metatarsal heads and the heel take load with every step, and the tissue slowly breaks down.
+2. **The inside of the shoe stays warm and damp.** Moist skin softens (macerates), cracks and lets infection in.
+3. **Blood supply to the foot is poor.** Damaged tissue heals slowly, or not at all.
+
+By the time an ulcer is visible, the damage has already been done ([Armstrong et al., 2017](#references)).
