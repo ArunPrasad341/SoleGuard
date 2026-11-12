@@ -1,0 +1,19 @@
+# e² studio / FSP: build output and folders recreated by "Generate Project Content"
+firmware/Debug/
+firmware/Release/
+firmware/ra/
+firmware/ra_gen/
+firmware/ra_cfg/
+firmware/ra_cfg.txt
+
+# Machine-specific IDE and debugger files
+firmware/.settings/
+firmware/.api_xml
+firmware/.clangd
+firmware/.secure_*
+firmware/*.launch
+firmware/*.jlink
+firmware/JLinkLog.log
+
+# Old QE for BLE output that the tool moves aside
+firmware/trash/
